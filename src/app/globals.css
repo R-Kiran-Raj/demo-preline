@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'GT Super Ds Trial Rg';
+  font-style: normal;
+  font-weight: normal;
+  src: local('GT Super Ds Trial Rg'), url('/font/GT-Super-Display-Regular-Trial.otf') format('woff');
+}
+
+@font-face {
+  font-family: 'GT Super Ds Trial Rg It';
+  font-style: normal;
+  font-weight: normal;
+  src: local('GT Super Ds Trial Rg It'), url('/font/GT-Super-Display-Regular-Italic-Trial.otf') format('woff');
+}
+
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('/font/Satoshi-Variable.woff2') format('woff2'),
+    url('/font/Satoshi-Variable.woff') format('woff'),
+    url('/font/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: 'GT Super Ds Trial Rg', Courier, monospace;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end);
+  border-right: 0.15em solid #000;
+}
